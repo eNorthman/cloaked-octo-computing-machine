@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Soul Cartel Marimba (Original Mix)",
+    "link": "//www.youtube.com/embed/uBVl7A1WeAc",
+    "description" : "Een mooi latin house muziekje van de platen label defected",
+    "coolNess" : 2,
+    "id": "1"
+  },
+  {
+    "title": "Roul and Doors - Guinea (Original Mix)",
+    "link": "//www.youtube.com/embed/opTFQQ3tJRk",
+    "description" : "Een mooi latin house muziekje van de platen label defected",
+    "coolNess" : 3,
+    "id": "2"
+  },
+  {
+    "title": "Crookers - Bowser (Original Mix)",
+    "link": "//www.youtube.com/embed/DYpbtBHfrSg",
+    "description" : "De track begint nog al appart maar bij de drop komt en zown zieke base line dat hij wel in je mix moet zitten",
+    "coolNess" : 4,
+    "id": "3"
+  },
+    {
+      "title": "Oliver Heldens - Koala (Original Mix)",
+      "link": "//www.youtube.com/embed/wQyWgeFtWls",
+      "description" : "Mega talent Oliver Heldens drops his brand new release on Spinnin Records. After the vocal version of his hit single Gecko reached the #1 position in the British Top 40, the way is paved for a Heldens winning streak. Koala has that Heldens production signature all over it. Think massive groove, deep basses and an incredibly sticky melody. BIG STUFF!",
+      "coolNess" : 4,
+      "id": "4"
+    },
+        {
+          "title": "Ray Foxx featuring Lovelle - La Musica (The Trumpeter)",
+          "link": "//www.youtube.com/embed/wQyWgeFtWls",
+          "description" : "The trumpeter moet in men dech zitten een heerlijke track dat het latin gevoel helemaal terug brengt. De track komt van Ray Foxx featuring Lovelle en zit bij het label defected records",
+          "coolNess" : 4,
+          "id": "5"
+        }
+]

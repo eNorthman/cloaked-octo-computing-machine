@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>musictoolbox</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Cstyles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<!--Dit is de header hier heb ik de application in staan van deze app-->
+<script type="text/x-handlebars">
+    <!-- Header -->
+    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                {{#link-to 'index' class='navbar-brand'}}youtube music{{/link-to}}
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+                    <li>{{#link-to 'about'}}About{{/link-to}}</li>
+                    <li>{{#link-to 'dicer'}}Thadicerrrr{{/link-to}}</li>
+                </ul>
+            </div>
+        </div><!-- /container -->
+    </div>
+    <!-- /Header -->
+    <div class="container">
+    {{outlet}}
+    </div>
+</script>
+
+<script type="text/x-handlebars" id="posts">
+    <div class="container-fluid">
+        <h1>Muziekjes</h1>
+        <div class="row-fluid">
+            <div class="col-md-5">
+                <table class="table table-striped">
+                    <tbody>
+                    {{#each post in model}}
+                    <tr>
+                        <td>
+                            {{#link-to 'post' post.id}} {{post.title}} {{/link-to}}
+                        </td>
+                    </tr>
+                    {{else}}
+                    ik ben leeg
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-7">
+                {{outlet}}
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars" id="posts/index">
+    <p class="text-warning">Please select a post</p>
+</script>
+
+
+<script type="text/x-handlebars" id="posts/loading">
+    <p class="text-warning">Ik ben aan het laden joh !</p>
+</script>
+
+<script type="text/x-handlebars" id="post">
+    <h1>{{title}}</h1>
+    <div>
+        <iframe width="560" height="315" {{bind-attr src=link}}  frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div>
+        {{description}}
+    </div>
+    <div>
+        {{#if isEditing}}
+        {{partial 'post/edit'}}
+        <button {{action 'doneEditing'}}>Done</button>
+        {{else}}
+        <button {{action 'edit'}}>Edit</button>
+        {{/if}}
+    </div>
+
+    <hr>
+</script>
+
+<script type="text/x-handlebars" id="post/_edit">
+    <p>{{input type="text" value-binding=kaasje}}</p>
+
+
+    <p>{{input type="text" value=title}}</p>
+    <p>{{input type="text" value=link}}</p>
+    <p>{{input type="text" value=description}}</p>
+</script>
+
+<script type="text/x-handlebars" id="index">
+    Dit is mijn index pagina WHOOO
+    de theme is http://bootstrapzero.com/bootstrap-template/dashboard
+</script>
+
+<script type="text/x-handlebars" id="about">
+    about paginaaaaa jippyyyy
+</script>
+
+
+
+
+<script type="text/x-handlebars" id="roll">
+    <p>
+        Enter your required dice roll below, for instance "3d6" will roll three six sided dice.
+    </p>
+
+    {{input valueBinding="rollString" placeholder="Enter your dice roll, e.g. '3d6' here"}}
+
+    {{view Roller.DiceInputField valueBinding="rollString" action="rollDice" placeholder="Enter your dice roll, e.g. '3d6' here"}}
+
+    <button {{action "rollDice"}}>Roll Dice</button>
+
+    {{#if errors}}
+    <div class="errors">
+        {{errors}}
+    </div>
+    {{/if}}
+
+    <hr>
+
+    <h2>Results</h2>
+    {{#each roll in content}}
+    <div class="roll">
+        <span class="roll-number">{{roll.diceNumber}}</span>
+        <span class="roll-result" {{bindAttr style="roll.proportion"}}>{{roll.numberOfRolls}}</span>
+    </div>
+    {{else}}
+    No results yet
+    {{/each}}
+</script>
+
+
+
+
+
+<script src="js/libs/jquery-1.10.2.js"></script>
+<script src="js/libs/handlebars-v2.0.0.js"></script>
+<script src="js/libs/ember-1.9.1.js"></script>
+<script src="js/libs/ember-data.js"></script>
+<script src="js/app.js"></script>
+<!-- to activate the test runner, add the "?test" query string parameter -->
+<script src="tests/runner.js"></script>
+</body>
+</html>
